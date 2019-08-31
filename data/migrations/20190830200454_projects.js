@@ -7,7 +7,11 @@ exports.up = function(knex) {
         tbl.text('project_name')
             .unique()
             .notNullable();
-        tbl.inte3ger('project_id')
+        tbl.text('description')
+            .notNullable();
+        tbl.boolean('completed')
+            .notNullable();
+        tbl.integer('project_id')
             .unique()
             .notNullable();
     })
@@ -15,6 +19,8 @@ exports.up = function(knex) {
         tbl.increments();
         tbl.text('resource_name')
             .unique()
+            .notNullable();
+        tbl.text('description')
             .notNullable();
         //🔑 Foreign Key
         tbl.integer('resource_id')
@@ -26,6 +32,10 @@ exports.up = function(knex) {
     .createTable('tasks', tbl => {
         tbl.increments();
         tbl.text('task_name', 128)
+            .notNullable();
+        tbl.text('description', 128)
+            .notNullable();
+        tbl.boolean('completed')
             .notNullable();
         tbl.integer('task_id')
             .unique()
