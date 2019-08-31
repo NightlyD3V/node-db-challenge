@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
         res.status(200).json(projects);
     })
     .catch((err) => {
-        console.log((err) => {
+        console.log(err);
         res.status(500).json({
             message: 'Error getting all projects!'
         });
@@ -67,7 +67,7 @@ router.get('/tasks', (req, res) => {
 /* POST: /api/project/tasks */
 router.post('/tasks', (req, res) => {
     const params = req.body;
-    
+
     Projects.addTasks(params)
     .then((task) => {
         res.status(200).json({
@@ -78,6 +78,8 @@ router.post('/tasks', (req, res) => {
         console.log(err);
         res.status(500).json({
             message: 'Error adding new task!'
-        })
-    })
-})
+        });
+    });
+});
+
+module.exports = router;

@@ -37,9 +37,6 @@ exports.up = function(knex) {
             .notNullable();
         tbl.boolean('completed')
             .notNullable();
-        tbl.integer('task_id')
-            .unique()
-            .notNullable();
         //🔑 Foreign Key
         tbl.integer('task_id')
             .unsigned()
