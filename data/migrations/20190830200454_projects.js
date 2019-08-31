@@ -7,7 +7,7 @@ exports.up = function(knex) {
         tbl.text('project_name')
             .unique()
             .notNullable();
-        tbl.integer('project_id')
+        tbl.inte3ger('project_id')
             .unique()
             .notNullable();
     })
