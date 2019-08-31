@@ -11,6 +11,18 @@ exports.up = function(knex) {
             .unique()
             .notNullable();
     })
+    .createTable('resources', tbl => {
+        tbl.increments();
+        tbl.text('resource_name')
+            .unique()
+            .notNullable();
+        //🔑 Foreign Key
+        tbl.integer('resource_id')
+            .unsigned()
+            .notNullable()
+            .references('id')
+            .inTable('projects');
+    })
     .createTable('tasks', tbl => {
         tbl.increments();
         tbl.text('task_name', 128)
