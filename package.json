@@ -1,0 +1,25 @@
+{
+  "name": "db-challenge",
+  "version": "1.0.0",
+  "description": "Sprint Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NightlyD3V/node-db-challenge.git"
+  },
+  "author": "Tyler Spaulding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NightlyD3V/node-db-challenge/issues"
+  },
+  "homepage": "https://github.com/NightlyD3V/node-db-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.20.1",
+    "knex": "^0.19.3",
+    "sqlite3": "^4.1.0"
+  }
+}
